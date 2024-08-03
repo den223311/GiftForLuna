@@ -19,6 +19,7 @@ body {
     height: 100vh; /* Full screen height */
     background-color: #d2042d; /* Cherry red background color */
     color: white; /* White text color */
+    overflow: hidden; /* Hide overflow */
 }
 
 .fade {
