@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* Hide overflow */
+}
+
+.slide {
+    display: none;
+    position: relative;
+    text-align: center;
+    height: 100vh; /* Full screen height */
+    background-color: #d2042d; /* Cherry red background color */
+    color: white; /* White text color */
+    overflow: hidden; /* Hide overflow for the collage background */
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.text, .text-overlay {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-height: 80%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.text {
+    font-size: 18px; /* Adjust font size for readability */
+}
+
+.text-overlay {
+    font-size: 24px; /* Larger font size for the overlay text */
+    bottom: 20px; /* Position overlay text at the bottom */
+}
+
+/* Collage Styles */
+.collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 2px; /* Space between images */
+    width: 100%;
+    height: 100%;
+}
+
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+}
+
+/* Responsive design for tablets and smaller devices */
+@media (max-width: 768px) {
+    .text, .text-overlay {
+        font-size: 16px; /* Smaller font size for mobile */
+        padding: 10px; /* Adjust padding */
+    }
+    
+    .collage {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        grid-template-rows: repeat(4, 1fr); /* Four rows on smaller screens */
+    }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+    .text, .text-overlay {
+        font-size: 14px; /* Even smaller font size for mobile */
+        padding: 5px; /* Further adjust padding */
+    }
+    
+    .collage {
+        grid-template-columns: 1fr; /* One column on very small screens */
+        grid-template-rows: repeat(8, 1fr); /* Eight rows on very small screens */
+    }
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
