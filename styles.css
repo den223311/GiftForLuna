@@ -39,12 +39,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    max-height: 80%;
+    width: 90%;
+    max-height: 70%; /* Make the text container scrollable */
     text-align: center;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 10px;
-    overflow: auto; /* Allow scrolling if content overflows */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .text {
@@ -77,6 +77,7 @@ body {
     .text, .text-overlay {
         font-size: 16px; /* Smaller font size for mobile */
         padding: 10px; /* Adjust padding */
+        max-height: 60%; /* Adjust max-height for smaller screens */
     }
     
     .collage {
@@ -90,6 +91,7 @@ body {
     .text, .text-overlay {
         font-size: 14px; /* Even smaller font size for mobile */
         padding: 5px; /* Further adjust padding */
+        max-height: 50%; /* Further adjust max-height */
     }
     
     .collage {
