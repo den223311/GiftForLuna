@@ -18,4 +18,8 @@ function plusSlides(n) {
 
 // Initialize event listeners for navigation arrows
 document.querySelector('.prev').addEventListener('click', function() {
-    plusSlides(-
+    plusSlides(-1);
+});
+document.querySelector('.next').addEventListener('click', function() {
+    plusSlides(1);
+});
